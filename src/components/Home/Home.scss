@@ -1,0 +1,38 @@
+// src/pages/Home.scss
+
+.home {
+  text-align: center;
+  padding: 50px;
+
+  .home-header {
+    background-color: #282c34;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .home-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #61dafb;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #21a1f1;
+      }
+    }
+  }
+}
