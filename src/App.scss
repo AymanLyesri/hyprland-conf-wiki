@@ -1,3 +1,11 @@
+@import "styles/styles.scss";
+@import "styles/markdown.scss";
+
+* {
+  color: $foreground;
+  background: $background;
+}
+
 .app-layout {
   display: flex; // Use flexbox for the layout
   height: 100vh; // Full height of the viewport
@@ -10,7 +18,7 @@
   left: 0; // Align to the left of the viewport
   width: 250px; // Fixed width for the sidebar
   height: 100vh; // Full height of the viewport
-  background-color: #333; // Sidebar background color
+  background-color: $background; // Sidebar background color
   z-index: 1000; // Ensure it stays above other content
 }
 
@@ -20,5 +28,6 @@
   padding: 20px; // Padding for the content
   height: 100vh; // Full height of the viewport
   overflow-y: auto; // Enable vertical scrolling in the content area
-  background-color: #f4f4f4; // Main content background color
+  // background-color: #f4f4f4; // Main content background color
+  background-color: $background;
 }

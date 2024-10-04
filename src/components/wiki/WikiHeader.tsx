@@ -1,24 +1,25 @@
 // JsonDisplay.tsx
-import React from "react";
-
-interface JsonItem {
-  title: string;
-  content: string;
-}
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 interface JsonDisplayProps {
-  data: JsonItem[]; // Accept an array of items
+  filePath: string;
 }
 
-const JsonDisplay: React.FC<JsonDisplayProps> = ({ data }) => {
+const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
+  const [content, setContent] = useState<string>("");
+
+  useEffect(() => {
+    // Fetch the markdown file content
+    fetch(filePath)
+      .then((response) => response.text())
+      .then((text) => setContent(text))
+      .catch((error) => console.error("Error loading markdown file:", error));
+  }, [filePath]);
+
   return (
-    <div className="json-display">
-      {data.map((item, index) => (
-        <div key={index} className="json-item">
-          <h2>{item.title}</h2>
-          <p>{item.content}</p>
-        </div>
-      ))}
+    <div className="markdown-content">
+      <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );
 };

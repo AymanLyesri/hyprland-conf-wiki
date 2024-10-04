@@ -1,26 +1,10 @@
 // App.tsx
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import Hello from "./components/Hello/Hello";
 import Home from "./components/Home/Home";
 import Sidebar from "./components/Sidebar/Sidebar";
 import "./App.scss";
 import WikiHeader from "./components/wiki/WikiHeader";
-
-const jsonData = [
-  {
-    title: "First Title",
-    content: "This is the content for the first item.",
-  },
-  {
-    title: "Second Title",
-    content: "This is the content for the second item.",
-  },
-  {
-    title: "Third Title",
-    content: "This is the content for the third item.",
-  },
-];
 
 const App = () => {
   return (
@@ -35,7 +19,9 @@ const App = () => {
             <Route path="/hello" element={<Hello />} />
             <Route
               path="/installation"
-              element={<WikiHeader data={jsonData} />}
+              element={
+                <WikiHeader filePath={"/assets/markdown/installation.md"} />
+              }
             />
           </Routes>
         </div>

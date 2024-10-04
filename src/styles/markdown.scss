@@ -1,0 +1,124 @@
+.markdown-content {
+  // Styling for headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $foreground;
+    margin: 1.2em 0 0.5em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  h6 {
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  // Paragraph styling
+  p {
+    color: #444;
+    line-height: 1.6;
+    margin: 1em 0;
+  }
+
+  // Links
+  a {
+    color: #3498db;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    border-left: 4px solid #ccc;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    color: #666;
+    background-color: $background-secondary;
+  }
+
+  // Lists
+  ul,
+  ol {
+    margin: 1em 0;
+    padding-left: 2em;
+  }
+
+  li {
+    margin: 0.5em 0;
+    line-height: 1.5;
+  }
+
+  // Code blocks
+  pre {
+    background-color: $background-secondary;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+  }
+
+  code {
+    background-color: $background-secondary;
+    color: $foreground-secondary;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
+
+  // Horizontal rules
+  hr {
+    border: none;
+    height: 1px;
+    background-color: $background-secondary;
+    margin: 2em 0;
+  }
+
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+  }
+
+  // Tables
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+    th {
+      background-color: $background-secondary;
+    }
+  }
+}
