@@ -9,7 +9,7 @@
 .app-layout {
   display: flex; // Use flexbox for the layout
   height: 100vh; // Full height of the viewport
-  overflow: hidden; // Prevent overflow of the container
+  //   overflow: hidden; // Prevent overflow of the container
 }
 
 .sidebar {
@@ -17,7 +17,7 @@
   top: 0; // Align to the top of the viewport
   left: 0; // Align to the left of the viewport
   width: 250px; // Fixed width for the sidebar
-  height: 100vh; // Full height of the viewport
+  overflow: scroll;
   background-color: $background; // Sidebar background color
   z-index: 1000; // Ensure it stays above other content
 }

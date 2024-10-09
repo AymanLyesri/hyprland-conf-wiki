@@ -1,27 +1,47 @@
 // App.tsx
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Hello from "./components/Hello/Hello";
-import Home from "./components/Home/Home";
-import Sidebar from "./components/Sidebar/Sidebar";
 import "./App.scss";
 import WikiHeader from "./components/wiki/WikiHeader";
+import MarkdownSidebar from "./components/Sidebar/Sidebar";
 
 const App = () => {
   return (
     <Router>
       <div className="app-layout">
-        <Sidebar /> {/* Sidebar will persist across all pages */}
+        {/* <Sidebar /> Sidebar will persist across all pages */}
+        <MarkdownSidebar
+          filePath={
+            "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+          }
+        />
         <div className="content">
           {/* <Navbar /> Navbar will persist on all pages */}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/hello" element={<Hello />} />
+            {/* <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} /> */}
             <Route
-              path="/installation"
+              path="/"
               element={
-                <WikiHeader filePath={"/assets/markdown/installation.md"} />
+                <WikiHeader
+                  filePath={
+                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+                  }
+                />
               }
+            />
+            <Route
+              path="/home"
+              element={
+                <WikiHeader
+                  filePath={
+                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+                  }
+                />
+              }
+            />
+            <Route
+              path="/packages"
+              element={<WikiHeader filePath={"/assets/markdown/pkglist.md"} />}
             />
           </Routes>
         </div>

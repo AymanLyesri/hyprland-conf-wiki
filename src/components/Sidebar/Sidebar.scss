@@ -1,35 +1,35 @@
-// src/components/Sidebar/Sidebar.scss
-.sidebar {
-  width: 250px;
-  height: 100vh;
-  padding-left: 20px;
+@import "../../styles/styles.scss";
 
-  .sidebar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: center;
+.sidebar {
+  height: 100vh;
+
+  .header {
+    margin: 50px 0px;
+    h2 {
+      text-align: center;
+      margin: 0px;
+    }
+    h6 {
+      text-align: center;
+      margin: 0px;
+      color: $secondary;
+    }
   }
 
-  .sidebar-nav {
-    ul {
-      list-style: none;
-      padding: 0;
+  a {
+    display: block;
+    padding: 5px 0;
+    color: $foreground;
+    text-decoration: none;
+    transition: background-color 0.3s;
 
-      li {
-        margin: 20px 0;
+    &:hover {
+      background-color: darken($background, 5%);
+    }
 
-        a {
-          color: white;
-          text-decoration: none;
-          font-size: 1.2rem;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #61dafb;
-          }
-        }
-      }
+    .secondary-link {
+      color: $secondary;
+      text-decoration: none;
     }
   }
 }

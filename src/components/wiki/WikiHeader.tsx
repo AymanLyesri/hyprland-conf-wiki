@@ -1,6 +1,7 @@
 // JsonDisplay.tsx
-import React, { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
+import React, { useEffect, useState, ReactNode } from "react";
+import ReactMarkdown, { Components } from "react-markdown";
+import remarkGfm from "remark-gfm"; // Import the GFM plugin
 
 interface JsonDisplayProps {
   filePath: string;
@@ -17,9 +18,35 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
       .catch((error) => console.error("Error loading markdown file:", error));
   }, [filePath]);
 
+  const headingWithId = (Tag: keyof JSX.IntrinsicElements) => {
+    return ({ children, ...props }: { children?: React.ReactNode }) => (
+      <Tag
+        id={
+          children
+            ? children.toString().toLowerCase().replace(/\s+/g, "-")
+            : undefined
+        }
+        {...props}>
+        {children}
+      </Tag>
+    );
+  };
+
+  // Custom components for rendering headings dynamically
+  const components: Components = {
+    h1: headingWithId("h1"),
+    h2: headingWithId("h2"),
+    h3: headingWithId("h3"),
+    h4: headingWithId("h4"),
+    h5: headingWithId("h5"),
+    h6: headingWithId("h6"),
+  };
+
   return (
     <div className="markdown-content">
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };
