@@ -32,7 +32,33 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
     );
   };
 
-  // Custom components for rendering headings dynamically
+  // Custom component for links
+  const linkRenderer = ({
+    href,
+    children,
+  }: {
+    href?: string;
+    children?: React.ReactNode;
+  }) => {
+    const isExternal = href?.startsWith("http");
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="external-link">
+          {children}
+        </a>
+      );
+    }
+
+    // For internal links, just render normally
+    return <a href={href}>{children}</a>;
+  };
+
+  // Custom components for rendering headings dynamically and links
   const components: Components = {
     h1: headingWithId("h1"),
     h2: headingWithId("h2"),
@@ -40,8 +66,8 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
     h4: headingWithId("h4"),
     h5: headingWithId("h5"),
     h6: headingWithId("h6"),
+    a: linkRenderer, // Custom link component
   };
-
   return (
     <div className="markdown-content">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>

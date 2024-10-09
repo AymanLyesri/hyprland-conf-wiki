@@ -1,5 +1,21 @@
 .markdown-content {
   // Styling for headings
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    th,
+    td {
+      // border: 1px solid #cf3333;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+    th {
+      background-color: $background-secondary;
+      border-bottom: 1px solid $foreground;
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -51,15 +67,26 @@
     &:hover {
       text-decoration: underline;
     }
+
+    &.external-link {
+      &:after {
+        content: "🔗";
+        margin-left: 0.2em;
+        font-size: 0.8em;
+      }
+    }
   }
 
   // Blockquotes
   blockquote {
-    border-left: 4px solid #ccc;
-    padding: 0.5em 1em;
+    border-left: 4px solid $secondary;
+    padding: 5px 10px;
     margin: 1em 0;
-    color: #666;
+    color: $secondary;
     background-color: $background-secondary;
+    * {
+      background-color: $background-secondary;
+    }
   }
 
   // Lists
@@ -104,21 +131,5 @@
     max-width: 100%;
     height: auto;
     margin: 1em 0;
-  }
-
-  // Tables
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5em 0;
-    th,
-    td {
-      border: 1px solid #ddd;
-      padding: 0.75em 1em;
-      text-align: left;
-    }
-    th {
-      background-color: $background-secondary;
-    }
   }
 }
