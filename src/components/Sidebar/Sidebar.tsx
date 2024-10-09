@@ -81,14 +81,18 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
     <aside className="sidebar">
       <div className="header">
         <h2>Wiki</h2>
-        <h6>Hyprland-conf by AymanLyesri</h6>
+        <h6>
+          <a href="https://github.com/AymanLyesri/hyprland-conf.git">
+            Hyprland-conf
+          </a>
+          by <a href="https://github.com/AymanLyesri">Ayman Lyesri</a>
+        </h6>
       </div>
       <ul>
         {headings.map((heading) => (
           <li key={heading.id}>
             <div>
-              <a
-                href={`#${heading.id}`}
+              <button
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.getElementById(heading.id);
@@ -100,7 +104,7 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
                   toggleSection(heading.id);
                 }}>
                 {heading.text}
-              </a>
+              </button>
               {isSectionOpen(heading.id) &&
                 heading.children &&
                 heading.children.length > 0 && (
@@ -111,8 +115,7 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
                     }}>
                     {heading.children.map((child) => (
                       <li key={child.id}>
-                        <a
-                          href={`#${child.id}`}
+                        <button
                           className="secondary-link"
                           onClick={(e) => {
                             e.preventDefault();
@@ -124,7 +127,7 @@ const JsonDisplay: React.FC<JsonDisplayProps> = ({ filePath }) => {
                             }
                           }}>
                           {child.text}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>

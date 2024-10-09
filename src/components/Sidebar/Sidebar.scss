@@ -10,18 +10,30 @@
       margin: 0px;
     }
     h6 {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       margin: 0px;
       color: $secondary;
+      a {
+        margin: 0px 5px;
+        color: $link;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
-  a {
+  button {
     display: block;
+    border: unset;
+    width: 100%;
     padding: 5px 0;
-    color: $foreground;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    text-align: start;
+    // color: $secondary;
+    // text-decoration: none;
+    // transition: background-color 0.3s;
 
     &:hover {
       background-color: darken($background, 5%);
