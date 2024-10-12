@@ -11,7 +11,7 @@ const App = () => {
         {/* <Sidebar /> Sidebar will persist across all pages */}
         <MarkdownSidebar
           filePath={
-            "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+            "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/master/README.md"
           }
         />
         <div className="content">
@@ -24,7 +24,7 @@ const App = () => {
               element={
                 <WikiHeader
                   filePath={
-                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/master/README.md"
                   }
                 />
               }
@@ -34,7 +34,7 @@ const App = () => {
               element={
                 <WikiHeader
                   filePath={
-                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/dev/README.md"
+                    "https://raw.githubusercontent.com/AymanLyesri/hyprland-conf/refs/heads/master/README.md"
                   }
                 />
               }
